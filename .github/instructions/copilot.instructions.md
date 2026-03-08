@@ -1,3 +1,6 @@
+---
+applyTo: "**/pt-arche-*/**"
+---
 # Arche Team Instructions
 
 ## Repository Overview
