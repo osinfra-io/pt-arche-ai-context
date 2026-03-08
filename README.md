@@ -6,7 +6,7 @@ Arche team-level Copilot instructions for the [osinfra-io](https://github.com/os
 
 This repository is the **arche team level** of a three-level GitHub Copilot instruction hierarchy. Instructions here apply to all `pt-arche-*` repositories.
 
-```
+```none
 Platform   pt-ai-context                   ← universal conventions for all pt-* repos
   └── Team   pt-arche-ai-context           ← this repo (applies to all pt-arche-* repos)
         └── Repo   .github/copilot-instructions.md   ← in every repo (repo-specific only)
