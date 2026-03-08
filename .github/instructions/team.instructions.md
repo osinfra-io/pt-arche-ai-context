@@ -29,8 +29,3 @@ To release a new version, simply push a new tag to the repository. The tag shoul
 git tag vX.Y.Z
 git push origin vX.Y.Z
 ```
-
-## Repository Practices
-
-- For detailed OpenTofu conventions (file structure, module pinning, resource patterns), refer to `.github/skills/opentofu.md`.
-- The `team.instructions.md` file in `.github/instructions/` is maintained in `pt-arche-ai-context` and must be kept identical across all arche child module repositories. When making changes, propagate to all repos.
