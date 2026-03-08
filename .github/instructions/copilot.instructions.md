@@ -1,6 +1,7 @@
 ---
 applyTo: "**/pt-arche-*/**"
 ---
+
 # Arche Team Instructions
 
 ## Repository Overview
@@ -20,11 +21,14 @@ These repositories are reusable OpenTofu child modules consumed by the corpus, l
 
 ### Creating Releases
 
-```bash
-gh release create <tag>
-```
+Tags follow [Semantic Versioning](https://semver.org/): `MAJOR.MINOR.PATCH` — increment MAJOR for breaking changes, MINOR for backwards-compatible additions, PATCH for backwards-compatible fixes.
 
-After tagging, bump the module `ref` (commit SHA + version comment) in any consumer repos (corpus, logos, pneuma) to the new commit SHA.
+To release a new version, simply push a new tag to the repository. The tag should be in the format `vX.Y.Z` where `X`, `Y`, and `Z` are integers.
+
+```none
+git tag vX.Y.Z
+git push origin vX.Y.Z
+```
 
 ## Repository Practices
 
