@@ -14,13 +14,11 @@ Platform   pt-ai-context                   ← universal conventions for all pt-
 
 ## Setup
 
-`COPILOT_CUSTOM_INSTRUCTIONS_DIRS` tells the GitHub Copilot CLI which directories to load custom instructions from at startup. Always include `pt-ai-context` (platform-level) alongside this repo (team-level).
+Add this repo alongside [pt-ai-context](https://github.com/osinfra-io/pt-ai-context) in your `COPILOT_CUSTOM_INSTRUCTIONS_DIRS`:
 
 ```bash
-# ~/.zshrc
+# ~/.zshrc or ~/.bashrc
 export COPILOT_CUSTOM_INSTRUCTIONS_DIRS="\
 $HOME/repositories/osinfra-io/platform-teams/pt-ai-context,\
 $HOME/repositories/osinfra-io/platform-teams/arche/pt-arche-ai-context"
 ```
-
-After editing your shell profile, reload it with `source ~/.zshrc`. See the `pt-ai-context` repo for multi-team setup and full path reference.
