@@ -1,4 +1,4 @@
-# pt-arche-ai-context
+# Platform Team: Arche AI Context
 
 Arche team-level Copilot instructions for the [osinfra-io](https://github.com/osinfra-io) platform teams workspace.
 
@@ -12,22 +12,15 @@ Platform   pt-ai-context                   ← universal conventions for all pt-
         └── Repo   .github/copilot-instructions.md   ← in every repo (repo-specific only)
 ```
 
-## What's in this repo
-
-`.github/instructions/team.instructions.md` — loaded via `COPILOT_CUSTOM_INSTRUCTIONS_DIRS`. Contains conventions shared across all arche child module repositories:
-
-- Repository overview and child module patterns
-- Module structure (root module, sub-modules, `shared/helpers.tofu`)
-- GitHub Actions workflows (`test.yml` on PRs, `release.yml` on version tags)
-- Release process and semantic versioning
-
 ## Setup
 
-Add this repo alongside `pt-ai-context` in your `COPILOT_CUSTOM_INSTRUCTIONS_DIRS`:
+`COPILOT_CUSTOM_INSTRUCTIONS_DIRS` tells the GitHub Copilot CLI which directories to load custom instructions from at startup. Always include `pt-ai-context` (platform-level) alongside this repo (team-level).
 
 ```bash
-# ~/.zshrc or ~/.bashrc
+# ~/.zshrc
 export COPILOT_CUSTOM_INSTRUCTIONS_DIRS="\
 $HOME/repositories/osinfra-io/platform-teams/pt-ai-context,\
 $HOME/repositories/osinfra-io/platform-teams/arche/pt-arche-ai-context"
 ```
+
+After editing your shell profile, reload it with `source ~/.zshrc`. See the `pt-ai-context` repo for multi-team setup and full path reference.

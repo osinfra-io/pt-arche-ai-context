@@ -3,29 +3,3 @@ applyTo: "**/pt-arche-*/**"
 ---
 
 # Arche Team Instructions
-
-## Repository Overview
-
-These repositories are reusable OpenTofu child modules consumed by the corpus, logos, and pneuma platform repos. Each module encapsulates a set of GCP or Kubernetes resources for consistent reuse across the platform.
-
-**Module structure patterns:**
-
-- **Root module** — core resources at the repository root (`main.tofu`, `variables.tofu`, `outputs.tofu`, `locals.tofu`)
-- **Sub-modules** — regional or functional sub-modules in subdirectories (e.g., `regional/`, `dns/`)
-- **`shared/helpers.tofu`** — invokes `pt-arche-core-helpers` when present; provides environment detection, labels, and project naming
-
-## GitHub Actions
-
-- **Tests** (`test.yml`): runs `tofu test` on pull requests using `osinfra-io/pt-techne-opentofu-workflows`. Tests use mocked providers — no real infrastructure or credentials needed, so tests can be run locally.
-- **Releases** (`release.yml`): triggered when a version tag (`v*.*.*`) is pushed; generates release notes automatically.
-
-### Creating Releases
-
-Tags follow [Semantic Versioning](https://semver.org/): `MAJOR.MINOR.PATCH` — increment MAJOR for breaking changes, MINOR for backwards-compatible additions, PATCH for backwards-compatible fixes.
-
-To release a new version, simply push a new tag to the repository. The tag should be in the format `vX.Y.Z` where `X`, `Y`, and `Z` are integers.
-
-```none
-git tag vX.Y.Z
-git push origin vX.Y.Z
-```
