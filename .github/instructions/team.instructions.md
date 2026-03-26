@@ -1,5 +1,5 @@
 ---
-applyTo: "**/pt-arche-*/**"
+applyTo: "**/pt-arche*/**"
 ---
 
 # Arche Team Instructions
