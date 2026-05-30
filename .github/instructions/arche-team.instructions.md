@@ -26,8 +26,4 @@ module "helpers" {
 
 ## README Badges
 
-In addition to the Dependabot and Datadog Security badges (see platform instructions), all Arche child modules include an OpenTofu Tests badge immediately after the title, before the other badges:
-
-```markdown
-[![OpenTofu Tests](https://img.shields.io/github/actions/workflow/status/osinfra-io/<repo>/test.yml?style=for-the-badge&logo=opentofu&color=FEDA15&label=OpenTofu%20Tests)](https://github.com/osinfra-io/<repo>/actions/workflows/test.yml) [![Dependabot](https://img.shields.io/github/actions/workflow/status/osinfra-io/<repo>/dependabot.yml?style=for-the-badge&logo=github&color=2088FF&label=Dependabot)](https://github.com/osinfra-io/<repo>/actions/workflows/dependabot.yml) [![Datadog Security Enabled](https://img.shields.io/badge/Datadog%20Security-Enabled-632CA6?style=for-the-badge&logo=datadog)](https://app.datadoghq.com/security/code-security/repositories?repository_id=<repo>)
-```
+Arche repos are OpenTofu child modules with a `test.yml` workflow, so every Arche README includes the **OpenTofu Tests** badge in addition to the Dependabot and Datadog Security badges. Use the badge catalog, markdown, and ordering defined in the platform instructions — Arche does not redefine the badge markdown here.
