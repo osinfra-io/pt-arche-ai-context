@@ -27,3 +27,39 @@ module "helpers" {
 ## README Badges
 
 Arche repos are OpenTofu child modules with a `test.yml` workflow, so every Arche README includes the **OpenTofu Tests** badge in addition to the Dependabot and Datadog Security badges. Use the badge catalog, markdown, and ordering defined in the platform instructions — Arche does not redefine the badge markdown here.
+
+## README Content
+
+Keep module READMEs focused on what consumers need:
+
+- Describe what the module creates in Repository Description. Keep Usage focused on prerequisites, deployment ordering, and consequential surprises. Use the standard fixture tip for configuration examples; do not add Module interface sections, source-path/interface tables, or usage snippets duplicating the fixtures.
+- Avoid prose inventories of variables, replica counts, feature/default lists, and generic resource or cost warnings. Retain specific billing traps, irreversible defaults, and security implications that consumers could otherwise miss.
+- Keep security warnings, destructive behavior, deployment ordering, and migration instructions. These are not filler.
+- Keep the Tests and Release sections, including mocked OpenTofu test commands and the semantic-version tag/push commands.
+- For local gateway-stack testing, show the Copilot CLI command `/platform-grouping:test-local-gateway-stack` and link to the `platform-grouping` plugin. Let the skill own setup, credentials, diagnostics, verification, and teardown; do not duplicate its runbook or record version-specific test results in READMEs.
+- Preserve the standard module README passages below verbatim, including in the child-module template. These are module defaults, not filler.
+- Outside those defaults, remove repeated explanations and empty or placeholder documentation links. Keep useful upstream references.
+- Do not reference pull requests or issues in READMEs. Describe the current behavior directly and link to maintained documentation instead.
+
+### Module README Defaults
+
+Include this tip in Usage:
+
+```markdown
+> [!TIP]
+> You can check the [tests/fixtures](tests/fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
+```
+
+Start Skills and Knowledge with:
+
+```markdown
+Links to documentation and other resources required to develop and iterate in this repository successfully.
+```
+
+Start Tests with:
+
+```markdown
+All OpenTofu tests are [mocked](https://opentofu.org/docs/cli/commands/test/#the-mock_provider-blocks) allowing us to test the module without creating infrastructure or requiring credentials. The trade-offs are acceptable in favor of speed and simplicity. In an OpenTofu test, a mocked provider or resource will generate fake data for all computed attributes that would normally be provided by the underlying provider APIs.
+```
+
+Keep skill-driven local integration testing separate from the mocked OpenTofu test suite.
