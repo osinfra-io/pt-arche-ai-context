@@ -36,7 +36,7 @@ Keep module READMEs focused on what consumers need:
 - Avoid prose inventories of variables, replica counts, feature/default lists, and generic resource or cost warnings. Retain specific billing traps, irreversible defaults, and security implications that consumers could otherwise miss.
 - Keep security warnings, destructive behavior, deployment ordering, and migration instructions. These are not filler.
 - Keep the Tests and Release sections, including mocked OpenTofu test commands and the semantic-version tag/push commands.
-- For local gateway-stack testing, show the Copilot CLI command `/platform-grouping:test-istio-authentik-locally` and link to the `platform-grouping` plugin. Let the skill own setup, credentials, diagnostics, verification, and teardown; do not duplicate its runbook or record version-specific test results in READMEs.
+- For local gateway-stack testing, show the Copilot CLI command `/platform-grouping:test-local-gateway-stack` and link to the `platform-grouping` plugin. Let the skill own setup, credentials, diagnostics, verification, and teardown; do not duplicate its runbook or record version-specific test results in READMEs.
 - Preserve the standard module README passages below verbatim, including in the child-module template. These are module defaults, not filler.
 - Outside those defaults, remove repeated explanations and empty or placeholder documentation links. Keep useful upstream references.
 - Do not reference pull requests or issues in READMEs. Describe the current behavior directly and link to maintained documentation instead.
