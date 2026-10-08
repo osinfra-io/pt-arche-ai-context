@@ -27,3 +27,14 @@ module "helpers" {
 ## README Badges
 
 Arche repos are OpenTofu child modules with a `test.yml` workflow, so every Arche README includes the **OpenTofu Tests** badge in addition to the Dependabot and Datadog Security badges. Use the badge catalog, markdown, and ordering defined in the platform instructions — Arche does not redefine the badge markdown here.
+
+## README Content
+
+Keep module READMEs focused on what consumers need:
+
+- Describe what the module creates, its source paths, prerequisites, and important defaults. Link to variables, outputs, and example fixtures instead of repeating their contents.
+- Keep security warnings, destructive behavior, deployment ordering, and migration instructions. These are not filler.
+- Keep the Tests and Release sections, including mocked OpenTofu test commands and the semantic-version tag/push commands.
+- For local gateway-stack testing, link to the `test-local-gateway-stack` skill in the `platform-grouping` plugin. Let the skill own setup, credentials, diagnostics, verification, and teardown; do not duplicate its runbook or record version-specific test results in READMEs.
+- Remove generic introductions, repeated explanations, and empty or placeholder documentation links. Keep useful upstream references.
+- Do not reference pull requests or issues in READMEs. Describe the current behavior directly and link to maintained documentation instead.
