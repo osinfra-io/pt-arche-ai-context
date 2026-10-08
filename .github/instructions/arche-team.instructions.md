@@ -36,5 +36,29 @@ Keep module READMEs focused on what consumers need:
 - Keep security warnings, destructive behavior, deployment ordering, and migration instructions. These are not filler.
 - Keep the Tests and Release sections, including mocked OpenTofu test commands and the semantic-version tag/push commands.
 - For local gateway-stack testing, link to the `test-local-gateway-stack` skill in the `platform-grouping` plugin. Let the skill own setup, credentials, diagnostics, verification, and teardown; do not duplicate its runbook or record version-specific test results in READMEs.
-- Remove generic introductions, repeated explanations, and empty or placeholder documentation links. Keep useful upstream references.
+- Preserve the standard module README passages below verbatim, including in the child-module template. These are module defaults, not filler.
+- Outside those defaults, remove repeated explanations and empty or placeholder documentation links. Keep useful upstream references.
 - Do not reference pull requests or issues in READMEs. Describe the current behavior directly and link to maintained documentation instead.
+
+### Module README Defaults
+
+Include this tip in Usage:
+
+```markdown
+> [!TIP]
+> You can check the [tests/fixtures](tests/fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
+```
+
+Start Skills and Knowledge with:
+
+```markdown
+Links to documentation and other resources required to develop and iterate in this repository successfully.
+```
+
+Start Tests with:
+
+```markdown
+All tests are [mocked](https://opentofu.org/docs/cli/commands/test/#the-mock_provider-blocks) allowing us to test the module without creating infrastructure or requiring credentials. The trade-offs are acceptable in favor of speed and simplicity. In an OpenTofu test, a mocked provider or resource will generate fake data for all computed attributes that would normally be provided by the underlying provider APIs.
+```
+
+Keep skill-driven local integration testing separate from the mocked OpenTofu test suite.
