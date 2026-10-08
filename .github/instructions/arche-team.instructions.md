@@ -63,3 +63,14 @@ All OpenTofu tests are [mocked](https://opentofu.org/docs/cli/commands/test/#the
 ```
 
 Keep skill-driven local integration testing separate from the mocked OpenTofu test suite.
+
+## Optional Local Integration Fixtures
+
+Use `tests/kubernetes/` for developer-selected Kubernetes integration tests of complex configuration changes. These tests are not required pre-push checks or a replacement for mocked tests. Do not maintain parallel Docker Compose fixtures.
+
+- Keep component-owned `setup.sh`, `verify.sh`, and `teardown.sh` entry points directly runnable. The platform-grouping gateway-stack skill coordinates component dependencies.
+- Invoke checked-out modules with relative sources, not duplicate application configuration in fixture YAML. Use the nearest `shared/` directory and relative symlinks for repeated files within a repository.
+- Use Docker Desktop Kubernetes with the Kind provisioner and ambient-only Istio. Require an explicit `docker-desktop` context and exclusive fixture ownership; never silently switch contexts or adopt existing installations.
+- Store local state, provider working directories, generated credentials, and certificates under gitignored `tests/kubernetes/.work/`. Never access cloud state for these tests.
+- Explicit teardown removes fixture-owned namespaces and local database data; clear application configuration state so the next setup starts fresh. Never delete cluster-wide CRDs, system namespaces, or the Docker Desktop cluster.
+- Full gateway-stack success requires real Google browser sign-in. Report automated checks and pending browser verification separately.
