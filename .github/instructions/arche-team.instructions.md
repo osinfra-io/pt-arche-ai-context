@@ -32,7 +32,8 @@ Arche repos are OpenTofu child modules with a `test.yml` workflow, so every Arch
 
 Keep module READMEs focused on what consumers need:
 
-- Describe what the module creates, prerequisites, and important defaults. Use the standard fixture tip for configuration examples; do not add Module interfaces sections, source-path/interface tables, or usage snippets duplicating the fixtures.
+- Describe what the module creates in Repository Description. Keep Usage focused on prerequisites, deployment ordering, and consequential surprises. Use the standard fixture tip for configuration examples; do not add Module interface sections, source-path/interface tables, or usage snippets duplicating the fixtures.
+- Avoid prose inventories of variables, replica counts, feature/default lists, and generic resource or cost warnings. Retain specific billing traps, irreversible defaults, and security implications that consumers could otherwise miss.
 - Keep security warnings, destructive behavior, deployment ordering, and migration instructions. These are not filler.
 - Keep the Tests and Release sections, including mocked OpenTofu test commands and the semantic-version tag/push commands.
 - For local gateway-stack testing, link to the `test-local-gateway-stack` skill in the `platform-grouping` plugin. Let the skill own setup, credentials, diagnostics, verification, and teardown; do not duplicate its runbook or record version-specific test results in READMEs.
