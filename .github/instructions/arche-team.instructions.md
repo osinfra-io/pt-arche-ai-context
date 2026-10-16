@@ -36,7 +36,7 @@ Keep module READMEs focused on what consumers need:
 - Avoid prose inventories of variables, replica counts, feature/default lists, and generic resource or cost warnings. Retain specific billing traps, irreversible defaults, and security implications that consumers could otherwise miss.
 - Keep security warnings, destructive behavior, deployment ordering, and migration instructions. These are not filler.
 - Keep the Tests and Release sections, including mocked OpenTofu test commands and the semantic-version tag/push commands.
-- For local gateway-stack testing, show the Copilot CLI command `/platform-grouping:test-local-gateway-stack` and link to the `platform-grouping` plugin. Let the skill own setup, credentials, diagnostics, verification, and teardown; do not duplicate its runbook or record version-specific test results in READMEs.
+- For local integration testing, show the Copilot CLI command `/platform-grouping:local-integration-testing` and link to the `platform-grouping` plugin. Let the skill own setup, credentials, diagnostics, verification, and teardown; do not duplicate its runbook or record version-specific test results in READMEs.
 - Preserve the standard module README passages below verbatim, including in the child-module template. These are module defaults, not filler.
 - Outside those defaults, remove repeated explanations and empty or placeholder documentation links. Keep useful upstream references.
 - Do not reference pull requests or issues in READMEs. Describe the current behavior directly and link to maintained documentation instead.
@@ -68,9 +68,9 @@ Keep skill-driven local integration testing separate from the mocked OpenTofu te
 
 Use `tests/kubernetes/` for developer-selected Kubernetes integration tests of complex configuration changes. These tests are not required pre-push checks or a replacement for mocked tests. Do not maintain parallel Docker Compose fixtures.
 
-- Keep component-owned `setup.sh`, `verify.sh`, and `teardown.sh` entry points directly runnable. The platform-grouping gateway-stack skill coordinates component dependencies.
+- Keep component-owned `setup.sh`, `verify.sh`, and `teardown.sh` entry points directly runnable. The platform-grouping local-integration-testing skill coordinates component dependencies.
 - Invoke checked-out modules with relative sources, not duplicate application configuration in fixture YAML. Use the nearest `shared/` directory and relative symlinks for repeated files within a repository.
 - Use Docker Desktop Kubernetes with the Kind provisioner and ambient-only Istio. Require an explicit `docker-desktop` context and exclusive fixture ownership; never silently switch contexts or adopt existing installations.
 - Store local state, provider working directories, generated credentials, and certificates under gitignored `tests/kubernetes/.work/`. Never access cloud state for these tests.
 - Explicit teardown removes fixture-owned namespaces and local database data; clear application configuration state so the next setup starts fresh. Never delete cluster-wide CRDs, system namespaces, or the Docker Desktop cluster.
-- Full gateway-stack success requires real Google browser sign-in. Report automated checks and pending browser verification separately.
+- Full local integration success requires real Google browser sign-in. Report automated checks and pending browser verification separately.
