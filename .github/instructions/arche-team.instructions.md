@@ -16,7 +16,7 @@ module "helpers" {
 }
 ```
 
-**File structure** — the same standard file layout applies (main.tofu, variables.tofu, outputs.tofu, locals.tofu, helpers.tofu, providers.tofu, backend.tofu). Each submodule directory (e.g. `regional/`, `dns/`) is also a complete module with its own full file layout.
+**File structure** — the same standard file layout applies (main.tofu, variables.tofu, outputs.tofu, locals.tofu, helpers.tofu, providers.tofu, backend.tofu), plus `data.tofu` and `moved.tofu` only when needed. When identical files (e.g. `helpers.tofu`) are needed in several subdirectories, follow the platform `shared/` symlink rule rather than copying them. Each submodule directory (e.g. `regional/`, `dns/`) is also a complete module with its own full file layout.
 
 **Lifecycle rules** — child modules must not declare `prevent_destroy` or other lifecycle rules. Root modules that consume a child module control resource destruction.
 
