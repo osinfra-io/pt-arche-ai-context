@@ -22,7 +22,7 @@ module "helpers" {
 
 **Sub-module structure** — functional sub-modules live in subdirectories (e.g. `regional/`, `dns/`, `nat/`). Each subdirectory has its own `helpers.tofu` invoking `pt-arche-core-helpers//child`.
 
-**Module tests** — tests live in `tests/*.tftest.hcl` and run via `tofu test` in the `test.yml` GitHub Actions workflow on pull requests. Tests use mocked providers — no real infrastructure or credentials needed.
+**Module tests** — focused tests in `tests/*.tftest.hcl` can verify the intended module baseline and run via `tofu test` in the `test.yml` GitHub Actions workflow on pull requests. Tests use mocked providers — no real infrastructure or credentials needed. Keep tests proportionate; do not build regression coverage solely to preserve behavior in live environments.
 
 ## README Badges
 
