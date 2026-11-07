@@ -30,6 +30,8 @@ Arche repos are OpenTofu child modules with a `test.yml` workflow, so every Arch
 
 ## README Content
 
+Do not create or update a README as a routine part of a code change. Edit it only when the user explicitly asks or a user-visible behavior change makes existing consumer guidance materially inaccurate or omits a necessary operational detail. Then change only the relevant passage; do not add generic module descriptions, implementation summaries, inventories, examples that duplicate fixtures, or other filler. The conventions below apply only when a README edit is actually needed.
+
 Keep module READMEs focused on what consumers need:
 
 - Describe what the module creates in Repository Description. Keep Usage focused on prerequisites, deployment ordering, and consequential surprises. Use the standard fixture tip for configuration examples; do not add Module interface sections, source-path/interface tables, or usage snippets duplicating the fixtures.
